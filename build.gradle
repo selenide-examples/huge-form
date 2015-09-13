@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.+'
+  testCompile 'com.codeborne:selenide:2.22'
+  //testRuntime group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver', version: '2.47.1'
+  //testRuntime group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.18'
+}
+
+defaultTasks 'clean', 'test'
+
+task libs(type: Sync) {
+  from configurations.testCompile
+  from configurations.testRuntime
+  into "$buildDir/lib"
+}
+
+compileJava.dependsOn libs
+
+[compileJava, compileTestJava]*.options.collect {options -> options.encoding = 'UTF-8'}
+[compileJava, compileTestJava]*.options.collect {options -> options.debug = true}
+
+test {
+  systemProperties 'file.encoding': 'UTF-8'
+  testLogging.showStandardStreams = true
+}
