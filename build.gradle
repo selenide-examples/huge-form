@@ -6,9 +6,9 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.+'
-  testCompile 'com.codeborne:selenide:3.1'
-  //testRuntime group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver', version: '2.49.0'
-  //testRuntime group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.18'
+  testCompile 'com.codeborne:selenide:3.3'
+  //testRuntime group: 'org.seleniumhq.selenium', name: 'selenium-htmlunit-driver', version: '2.52.0'
+  //testRuntime group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.19'
 }
 
 defaultTasks 'clean', 'test'
