@@ -6,7 +6,7 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.+'
-  testCompile 'com.codeborne:selenide:4.11.4'
+  testCompile 'com.codeborne:selenide:5.4.1'
 }
 
 defaultTasks 'clean', 'test'
