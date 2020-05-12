@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Huge dynamic form</title>
+    <title>Huge form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script type="text/javascript" src="jquery-2.1.4.min.js" language="JavaScript"></script>
     <script type="text/javascript">
       function generateFields() {
         var form = $('form');
-        for (var i = 0; i < 100; i++) {
-          $('<label><input name="field[' + i + ']"/>Field #' + i + '</label>').appendTo(form);
+        for (var i = 0; i < 50; i++) {
+          $('<div><label><input style="width: 300px;" name="field[' + i + ']"/>Field #' + i + '</label></div>').appendTo(form);
         }
       }
       $(function() {
@@ -17,13 +17,16 @@
     </script>
   </head>
   <body>
-    <h1>Huge dynamic form</h1>
+    <h1>Huge form</h1>
     <input name="HEADER" style="border: none; font-size: 36px;"/>
     <hr>
 
-    <div style="width: 400px">
+    <div style="width: 800px">
       <form>
       </form>
     </div>
+
+    <hr>
+    <input name="FOOTER" style="border: none; font-size: 36px;"/>
   </body>
 </html>
