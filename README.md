@@ -18,7 +18,7 @@ and in different browsers:
 To run visual comparision, just type from command line:
 
 ```
-gradle
+./gradlew
 ```
 
 _the open your eyes and watch the show!_
