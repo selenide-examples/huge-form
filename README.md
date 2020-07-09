@@ -22,3 +22,6 @@ To run visual comparision, just type from command line:
 ```
 
 _the open your eyes and watch the show!_
+
+
+[![Build Status](https://travis-ci.org/selenide-examples/huge-form.png)](https://travis-ci.org/selenide-examples/huge-form)
