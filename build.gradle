@@ -25,5 +25,6 @@ compileJava.dependsOn libs
 
 test {
   systemProperties 'file.encoding': 'UTF-8'
+  systemProperties 'selenide.headless': 'true'
   testLogging.showStandardStreams = true
 }
