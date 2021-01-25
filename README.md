@@ -15,7 +15,7 @@ and in different browsers:
 
 ### How to run
 
-To run visual comparision, just type from command line:
+To run visual comparison just type from command line:
 
 ```
 ./gradlew
