@@ -12,8 +12,6 @@ import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.CHROME;
-import static com.codeborne.selenide.WebDriverRunner.FIREFOX;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static java.util.Arrays.asList;
 
@@ -22,10 +20,10 @@ public class FillHugeFormTest {
   @Parameterized.Parameters
   public static List<Object[]> names() {
     return asList(
-        new Object[]{CHROME, "sendKeys"},
-        new Object[]{CHROME, "fastSetValue"},
-        new Object[]{FIREFOX, "sendKeys"},
-        new Object[]{FIREFOX, "fastSetValue"}
+        new Object[]{"chrome", "sendKeys"},
+        new Object[]{"chrome", "fastSetValue"},
+        new Object[]{"firefox", "sendKeys"},
+        new Object[]{"firefox", "fastSetValue"}
     );
   }
   

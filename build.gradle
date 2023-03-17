@@ -5,20 +5,13 @@ repositories {
 }
 
 dependencies {
-  testCompile 'junit:junit:4.13.1'
-  testCompile 'com.codeborne:selenide:5.18.0'
-  testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.30'
+  testImplementation 'junit:junit:4.13.2'
+  testImplementation 'com.codeborne:selenide:6.12.3'
+  implementation 'org.slf4j:slf4j-simple:2.0.7'
+  testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.7'
 }
 
 defaultTasks 'clean', 'test'
-
-task libs(type: Sync) {
-  from configurations.testCompile
-  from configurations.testRuntime
-  into "$buildDir/lib"
-}
-
-compileJava.dependsOn libs
 
 [compileJava, compileTestJava]*.options.collect {options -> options.encoding = 'UTF-8'}
 [compileJava, compileTestJava]*.options.collect {options -> options.debug = true}
