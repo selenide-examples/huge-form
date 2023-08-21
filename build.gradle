@@ -6,7 +6,7 @@ repositories {
 
 dependencies {
   testImplementation 'junit:junit:4.13.2'
-  testImplementation 'com.codeborne:selenide:6.17.0'
+  testImplementation 'com.codeborne:selenide:6.17.1'
   implementation 'org.slf4j:slf4j-simple:2.0.7'
   testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.7'
 }
