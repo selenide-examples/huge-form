@@ -7,8 +7,8 @@ repositories {
 dependencies {
   testImplementation 'junit:junit:4.13.2'
   testImplementation 'com.codeborne:selenide-junit4:7.4.1'
-  implementation 'org.slf4j:slf4j-simple:2.0.15'
-  testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.15'
+  implementation 'org.slf4j:slf4j-simple:2.0.16'
+  testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.16'
 }
 
 defaultTasks 'clean', 'test'
