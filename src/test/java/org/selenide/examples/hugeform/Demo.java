@@ -1,14 +1,16 @@
 package org.selenide.examples.hugeform;
 
-import com.codeborne.selenide.SelenideConfig;
-import com.codeborne.selenide.SelenideDriver;
-import org.openqa.selenium.By;
+import static com.codeborne.selenide.Selenide.sleep;
+import static java.util.Objects.requireNonNull;
+import static java.util.concurrent.Executors.newFixedThreadPool;
+import static java.util.concurrent.TimeUnit.MINUTES;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Selenide.sleep;
-import static java.util.concurrent.Executors.newFixedThreadPool;
+import org.openqa.selenium.By;
+
+import com.codeborne.selenide.SelenideConfig;
+import com.codeborne.selenide.SelenideDriver;
 
 public class Demo implements Runnable {
   private final SelenideDriver driver;
@@ -19,7 +21,7 @@ public class Demo implements Runnable {
 
   @Override
   public void run() {
-    driver.open(getClass().getResource("/huge_dynamic_form.html"));
+    driver.open(requireNonNull(getClass().getResource("/huge_dynamic_form.html")));
 
     driver.$(By.name("FOOTER")).setValue("fastSetValue = " + driver.config().fastSetValue());
     driver.$(By.name("HEADER")).setValue("fastSetValue = " + driver.config().fastSetValue());
@@ -42,7 +44,7 @@ public class Demo implements Runnable {
     pool.submit(new Demo(browser1));
     pool.submit(new Demo(browser2));
     pool.shutdown();
-    pool.awaitTermination(1, TimeUnit.MINUTES);
+    pool.awaitTermination(1, MINUTES);
 
     sleep(4000);
     browser2.close();
