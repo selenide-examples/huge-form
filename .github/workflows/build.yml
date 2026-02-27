@@ -23,7 +23,7 @@ jobs:
         run: ./gradlew clean test
       - name: Upload artifacts
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: test-report
           retention-days: 7
