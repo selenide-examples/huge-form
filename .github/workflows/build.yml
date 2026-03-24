@@ -18,7 +18,7 @@ jobs:
           cache: 'gradle'
           java-version: 17
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
+        uses: gradle/actions/setup-gradle@v6
       - name: Build & test
         run: ./gradlew clean test
       - name: Upload artifacts
